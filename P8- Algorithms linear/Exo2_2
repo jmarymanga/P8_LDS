@@ -1,0 +1,54 @@
+ALGORITHM Sum_of_Overlapping_Elements_In_Two_Sets_2_2
+
+VAR
+i, j,som: INTEGER;
+tab1 : ARRAY_OF INTEGER[4];
+tab2 : ARRAY_OF INTEGER[5];
+tabF : ARRAY_OF INTEGER[9];
+som := 0;
+present : BOOLEAN := FALSE;  
+
+BEGIN
+
+   tab1 := {3, 1, 7, 9}; // inserting the elements directly in the array
+   tab2 := {2, 4, 1, 9, 3}; // inserting the elements directly in the array
+   tabF := {}; // array
+   htab : HASH_TABLE<INTEGER>;
+   htab.insert();
+
+ 
+   FOR i FROM 0 TO tab1.length-1 STEP 1 DO 
+      
+      tabF := tab1[i];
+
+   END_FOR
+
+   FOR j FROM 0 TO tab2.length-1 STEP 1 DO 
+      
+      tabF := tab2[j];
+
+   END_FOR
+
+
+   FOR elmt FROM 0 TO tabF.length-1 STEP 1 DO 
+
+         IF (elmt in htab.keys()) THEN
+            present = TRUE;
+            htab(elmt) += 1 ;
+            break;
+         ELSE
+            present = FALSE;
+            htab(elmt) = 1;
+         END_IF
+
+         IF (htab(elmt) = 2;) THEN
+            som = som + htab(elmt)*2;
+         ELSE
+            som = som;
+         END_IF
+
+   END_FOR
+
+   Write(som);
+
+END
